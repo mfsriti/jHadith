@@ -8,7 +8,7 @@ public class AnalyzerPropertiesHandler extends PropertiesHandler {
 
 	public AnalyzerPropertiesHandler() throws GeneralException {
 		super(
-				"src\\sa\\edu\\imamu\\hadith\\analyzer\\hadith-analyzer.properties",
+				"src\\org\\knowde\\hadith\\analyzer\\hadith-analyzer.properties",
 				"UTF-8");
 	}
 
