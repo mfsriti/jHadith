@@ -1,5 +1,7 @@
 package org.knowde.hadith.core;
 
+import org.knowde.hadith.visitors.Visitor;
+
 /**
  * Created on May 3, 2010
  * @author Mohamed-Foued Sriti
@@ -18,5 +20,10 @@ public class Narration extends Component{
 	//@TODO: search in children an object of type chain an return it
 	public Chain getChain() {
 		return null;
+	}
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
+		
 	}
 }

@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.knowde.hadith.visitors.Visitor;
+
 /**
  * Created on May 3, 2010
  * 
@@ -17,28 +19,28 @@ public abstract class Component {
 	/**
 	 * Unique ID for the component
 	 */
-	String id = null;
+	String mId = null;
 	/**
 	 * A string value that the component can hold (meaning according to the
 	 * component type)
 	 */
-	String value = null;
+	String mValue = null;
 	/**
 	 * The number or the order of the component within its siblings
 	 */
-	int number;
+	int mNumber;
 	/**
 	 * Parent of the component
 	 */
-	Component parent = null;
+	Component mParent = null;
 	/**
 	 * Children of the component
 	 */
-	List<Component> children = null;
+	List<Component> mChildren = null;
 	/**
 	 * A map that indexes all created components
 	 */
-	static Map<String, Component> components = new HashMap<String, Component>();
+	static Map<String, Component> mComponents = new HashMap<String, Component>();
 
 	/**
 	 * Create an object component that only have an id. Use this constructor to
@@ -48,10 +50,15 @@ public abstract class Component {
 	 */
 	public Component(String id) {
 		setId(id);
-		children = new ArrayList<Component>();
-		components.put(getId(), this);
+		mChildren = new ArrayList<Component>();
+		mComponents.put(getId(), this);
 	}
 
+	public Component(String id, String value) {
+		this(id);
+		setValue(value);
+	}
+	
 	/**
 	 * Create an object component that have an id and a parent. You can set as
 	 * you want the other properties using setters.
@@ -102,63 +109,63 @@ public abstract class Component {
 	}
 
 	public String getValue() {
-		return value;
+		return mValue;
 	}
 
 	public void setValue(String value) {
-		this.value = value;
+		this.mValue = value;
 	}
 
 	public int getNumber() {
-		return number;
+		return mNumber;
 	}
 
 	public void setNumber(int number) {
-		this.number = number;
+		this.mNumber = number;
 	}
 
 	public String getId() {
-		return id;
+		return mId;
 	}
 
 	public void setId(String id) {
-		this.id = id;
+		this.mId = id;
 	}
 
 	public Component getParent() {
-		return parent;
+		return mParent;
 	}
 
 	public void setParent(Component parent) {
-		this.parent = parent;
+		this.mParent = parent;
 	}
 
 	public List<Component> getChildren() {
-		return children;
+		return mChildren;
 	}
 
 	public void setChildren(List<Component> children) {
-		this.children = children;
+		this.mChildren = children;
 	}
 
 	public void addChild(Component child) {
-		children.add(child);
+		mChildren.add(child);
 	}
 
 	public void removeChild(Component child) {
-		children.add(child);
+		mChildren.add(child);
 	}
 
 	static public Component findComponent(String id) {
-		return components.get(id);
+		return mComponents.get(id);
 	}
 
 	public static Map<String, Component> getComponents() {
-		return components;
+		return mComponents;
 	}
 
 	public static void setComponents(Map<String, Component> components) {
-		Component.components = components;
+		Component.mComponents = components;
 	}
 
 	public String toString() {
@@ -167,4 +174,6 @@ public abstract class Component {
 				+ getNumber() + " " + getValue() + "]";
 		return result;
 	}
+	
+	public abstract void accept(Visitor v);
 }

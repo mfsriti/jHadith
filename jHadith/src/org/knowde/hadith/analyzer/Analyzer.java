@@ -8,9 +8,9 @@ import org.knowde.util.GeneralException;
 
 public class Analyzer {
 	AnalyzerPropertiesHandler propsHandler= null;
-	String chapterTok, sectionTok;
-	List<String> beginList, sepList, textList;
-	int[] ignoreList;
+	protected String chapterTok, sectionTok;
+	protected List<String> beginList, sepList, textList;
+	protected int[] ignoreList;
 	public Analyzer() throws GeneralException {
 			propsHandler = new AnalyzerPropertiesHandler();
 			getTokens();

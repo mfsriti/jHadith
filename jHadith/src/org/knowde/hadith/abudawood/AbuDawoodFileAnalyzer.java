@@ -1,8 +1,8 @@
-package org.knowde.hadith.analyzer;
+package org.knowde.hadith.abudawood;
 
-import java.io.IOException;
 import java.util.Arrays;
 
+import org.knowde.hadith.analyzer.FileAnalyzer;
 import org.knowde.hadith.core.Component;
 import org.knowde.hadith.core.ComponentFactory;
 import org.knowde.hadith.core.ComponentFactory.ComponentType;
@@ -165,12 +165,12 @@ public class AbuDawoodFileAnalyzer extends FileAnalyzer {
 		}
 		//TODO: print to be deleted
 		System.out.println(text);
-		try {
+		/*try {
 			System.in.read();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		return factory.getComponent(ComponentType.TEXT, narration, text, 0);
 	}
 }

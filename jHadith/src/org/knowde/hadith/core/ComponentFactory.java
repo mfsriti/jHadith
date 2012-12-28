@@ -9,7 +9,7 @@ public class ComponentFactory {
 		switch(type)
 		{
 		case BOOK:
-			result = new Book(value);
+			result = new Book("book"+number, value);
 			break;
 			
 		case CHAPTER:
@@ -45,5 +45,9 @@ public class ComponentFactory {
 		}
 		return result;
 	}
-	public enum ComponentType {BOOK, CHAPTER, SECTION, NARRATION, CHAIN, NARRATOR, SEPARATOR, TEXT}; 
+	
+	public enum ComponentType {
+		BOOK, CHAPTER, SECTION, NARRATION, CHAIN, NARRATOR, SEPARATOR, TEXT
+	}; 
+	
 }

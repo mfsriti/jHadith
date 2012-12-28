@@ -1,0 +1,1051 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#"
+     xml:base="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl">
+        <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#بابه -->
+
+    <owl:ObjectProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#بابه">
+        <rdfs:range rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#باب"/>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديثه -->
+
+    <owl:ObjectProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديثه">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_حديث"/>
+        <rdfs:range rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنده -->
+
+    <owl:ObjectProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنده">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_سند"/>
+        <rdfs:range rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سند"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخصه -->
+
+    <owl:ObjectProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخصه">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#راوي"/>
+        <rdfs:range rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شيخه -->
+
+    <owl:ObjectProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شيخه">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:comment xml:lang="ar">شيخ الصحابي هو الرسول صلى الله عليه وسلم</rdfs:comment>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+        <rdfs:range rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#فصله -->
+
+    <owl:ObjectProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#فصله">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#باب"/>
+        <rdfs:range rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#فصل"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتابه -->
+
+    <owl:ObjectProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتابه">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_كتاب"/>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+        <rdfs:range rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مألفه -->
+
+    <owl:ObjectProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مألفه">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب"/>
+        <rdfs:range rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مصنف"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#اسم -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#اسم">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#ترتيب -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#ترتيب">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تسلسل -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تسلسل">
+        <rdfs:comment xml:lang="ar">لفظ التسلسل إن كان السند متسلسل</rdfs:comment>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سند"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حالة -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حالة">
+        <rdfs:comment xml:lang="ar">{متصل،منقطع،مرسل،معضل،معلق}
+</rdfs:comment>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سند"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#درجة -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#درجة">
+        <rdfs:comment xml:lang="ar">{صحيح (متفق عليه، انفرد البخاري، انفرد مسلم، شرطهما، شرط البخاري، شرط مسلم، غيرهما)،حسن ، حسن صحيح، ضعيف}</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنة_إسلام -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنة_إسلام">
+        <rdfs:comment xml:lang="ar">تاريخ دخوله في الإسلام</rdfs:comment>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#صحابي"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنة_تأليف -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنة_تأليف">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنة_ميلاد -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنة_ميلاد">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنة_وفاة -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنة_وفاة">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شهرة -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شهرة">
+        <rdfs:comment xml:lang="ar">{مشهور، عزيز، غريب}</rdfs:comment>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#صفة -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#صفة">
+        <rdfs:comment xml:lang="ar">عدل، ضابط، متقن، الخ</rdfs:comment>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علو -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علو">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سند"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#عنوان -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#عنوان">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_كتاب"/>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#قبيلة -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#قبيلة">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كنية -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كنية">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#لفظ -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#لفظ">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_سند"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#منتهى -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#منتهى">
+        <rdfs:comment xml:lang="ar">{الله،الرسول،صحابي،تابعي}</rdfs:comment>
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سند"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص_زيادة -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص_زيادة">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#متن"/>
+        <rdfs:subPropertyOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص_سند -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص_سند">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سند"/>
+        <rdfs:subPropertyOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص_متن -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص_متن">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#متن"/>
+        <rdfs:subPropertyOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص_مدرج -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص_مدرج">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#متن"/>
+        <rdfs:subPropertyOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نص"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#وضع -->
+
+    <owl:DatatypeProperty rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#وضع">
+        <rdfs:domain rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#آحاد -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#آحاد">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_معدود"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#أطراف -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#أطراف">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#اشتراك -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#اشتراك">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة_متعددة"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#اضطراب -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#اضطراب">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة_متعددة"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#باب -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#باب">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_كتاب"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تابع_تابعي -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تابع_تابعي">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تابعي -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تابعي">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#ترجيح -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#ترجيح">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة_ثنائية"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مصطلح"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_حديث -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_حديث">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_سند -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_سند">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_كتاب -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_كتاب">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#جامع -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#جامع">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#جزء -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#جزء">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#جمع -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#جمع">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة_ثنائية"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مصطلح"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_بعدي -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_بعدي">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_ترابط -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_ترابط">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_تسلسلي -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_تسلسلي">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مخرج -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مخرج">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مرجعي -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مرجعي">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_معدود -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_معدود">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_معلل -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_معلل">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_نصي -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_نصي">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حسن -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حسن">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مخرج"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حسن_صحيح -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حسن_صحيح">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مخرج"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#راوي -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#راوي">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_سند"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#زوائد -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#زوائد">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#زيادة_ثقة -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#زيادة_ثقة">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_نصي"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سند -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سند">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_حديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنن -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#سنن">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مصطلح"/>
+        <rdfs:subClassOf rdf:resource="&foaf;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شيخ -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شيخ">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#صحابي -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#صحابي">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#صحيح -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#صحيح">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مخرج"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#ضعيف -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#ضعيف">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مخرج"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#عالي -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#عالي">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_بعدي"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#عزيز -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#عزيز">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#آحاد"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مصطلح"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة_ثنائية -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة_ثنائية">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة_متعددة -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة_متعددة">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#غريب -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#غريب">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#آحاد"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#فاصلة -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#فاصلة">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_سند"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#فصل -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#فصل">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_كتاب"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#قدسي -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#قدسي">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مرجعي"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مصطلح"/>
+        <rdfs:subClassOf rdf:resource="&terms;BibliographicResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_رجال -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_رجال">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_علل -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_علل">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مأنن -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مأنن">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_ترابط"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#متصل -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#متصل">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_تسلسلي"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#متن -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#متن">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#تركيب_حديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#متواتر -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#متواتر">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_معدود"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مجمع -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مجمع">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مدرج -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مدرج">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_نصي"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مدلس -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مدلس">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_ترابط"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مرسل -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مرسل">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#منقطع"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مرفوع -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مرفوع">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مرجعي"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مستخرج -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مستخرج">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مستدرك -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مستدرك">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مسلسل -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مسلسل">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_ترابط"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مسند -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مسند">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#متصل"/>
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مرفوع"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مسند_أحاديث -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مسند_أحاديث">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مشهور -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مشهور">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#آحاد"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مصطلح -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مصطلح"/>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مصنف -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مصنف">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#شخص"/>
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مضطرب -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مضطرب">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_معلل"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#معجم -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#معجم">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#معضل -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#معضل">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#منقطع"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#معلق -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#معلق">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#منقطع"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#معنعن -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#معنعن">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_ترابط"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مفرد -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مفرد">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_نصي"/>
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#غريب"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مقطوع -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مقطوع">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مرجعي"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مقلوب -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#مقلوب">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_معلل"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#منقطع -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#منقطع">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_تسلسلي"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#منكر -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#منكر">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_نصي"/>
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#غريب"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#موضوع -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#موضوع">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#ضعيف"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#موطأ -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#موطأ">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتاب_أحاديث"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#موقوف -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#موقوف">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_مرجعي"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نازل -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نازل">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#حديث_بعدي"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نسخ -->
+
+    <owl:Class rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#نسخ">
+        <rdfs:subClassOf rdf:resource="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#علاقة_ثنائية"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتابه -->
+
+    <owl:NamedIndividual rdf:about="http://mfsriti.free.fr/hadith/1434/01/HadithOntology.owl#كتابه"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

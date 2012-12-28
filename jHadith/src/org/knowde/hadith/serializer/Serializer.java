@@ -6,6 +6,12 @@ import org.knowde.hadith.core.Component;
 
 
 public abstract class Serializer {
+	String mFilePath = null;
+	
+	protected Serializer(String filePath){
+		mFilePath = filePath;
+	}
+	
 	/**
 	 * Parse all descendance of a given node 
 	 */

@@ -1,5 +1,7 @@
 package org.knowde.hadith.core;
 
+import org.knowde.hadith.visitors.Visitor;
+
 /**
  * Created on May 4, 2010
  * @author Mohamed-Foued Sriti
@@ -9,5 +11,10 @@ package org.knowde.hadith.core;
 public class Separator extends Ring {
 	public Separator(String id, Component parent, String word, int order) {
 		super(id, parent, word, order);
+	}
+
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
 	}
 }
