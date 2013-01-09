@@ -1,6 +1,6 @@
 package org.knowde.hadith.owl;
 
-import java.util.Iterator;
+import java.util.Map;
 
 import org.knowde.util.GeneralException;
 
@@ -8,9 +8,9 @@ import com.hp.hpl.jena.ontology.Individual;
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
-import com.hp.hpl.jena.ontology.OntProperty;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator;
 
 public abstract class Ontology {
@@ -57,23 +57,38 @@ public abstract class Ontology {
 			System.out.println("hadith.ontology.property.="+it2.next().getLocalName());
 	}
 */		
+/*
 	public void addBook(String id, String bookName) {
 		Individual individual =  HOClass.BOOK.addIndividual(id);
 		HODataProperty.TITLE.addDataProperty(individual, bookName);
+	}
+*/
+
+	public void addIndividual(HOClass typeName, String id, Map<HOProperty,String> dataProperties){
+		Individual individual = typeName.addIndividual(id);
+		for (Map.Entry<HOProperty, String> entry : dataProperties.entrySet()) {
+			entry.getKey().addProperty(individual, entry.getValue());
+		}
 	}
 	
 	public void dump(){
 		mOntModel.write(System.out, "RDF/XML");
 	}
 
+	public interface HOResource {
+		public String getText();
+		public String getURI();
+		public Resource getResource();
+	}
+	
 	/**
 	 * Inspired from http://opentox.org/data/documents/development/RDF%20files/JavaOnly/JenaExamples
 	 * @author msriti
 	 *
 	 */
-	public enum HOClass{
+	public enum HOClass implements HOResource {
 
-			BOOK ("hadith.ontology.class.book"),
+			NARRATIONBOOK ("hadith.ontology.class.narrationbook"),
 			CHAIN ("hadith.ontology.class.chain"),
 			CHAPTER ("hadith.ontology.class.chapter"),
 			NARRATION ("hadith.ontology.class.narration"),
@@ -92,23 +107,28 @@ public abstract class Ontology {
 				return text;
 			}
 			
-			public String getNS() {
+			public String getURI() {
 				return String.format(mNS, mProps.getProperty(getText()));
 			}
 			
-			public OntClass getOntClass() {
-				return mOntModel.getOntClass(getNS());
+			public Resource getResource() {
+				return mOntModel.getOntClass(getURI());
 			}
 			
 			public Individual addIndividual(String shortName) {
-				return getOntClass().createIndividual(String.format(mNS, shortName));
+				return ((OntClass)getResource()).createIndividual(String.format(mNS, shortName));
 			}
 	}
 	
+	public interface HOProperty extends HOResource {
+		public void addProperty(Individual individual, String value);
+	}
 	
-	public enum HODataProperty{
+	public enum HODataProperty implements HOProperty {
 
-		TITLE ("hadith.ontology.property.title");
+		TITLE ("hadith.ontology.property.title"),
+		ORDERNUM ("hadith.ontology.property.ordernum"),
+		HASBOOK("hadith.ontology.property.hasBook");
 		
 		private final String text;
 		
@@ -120,16 +140,46 @@ public abstract class Ontology {
 			return text;
 		}
 		
-		public String getNS() {
+		public String getURI() {
 			return String.format(mNS, mProps.getProperty(getText()));
 		}
 		
-		public Property getOntProperty() {
-			return mOntModel.getProperty(getNS());
+		public Resource getResource() {
+			return mOntModel.getProperty(getURI());
 		}
 		
-		public void addDataProperty(Individual individual, String value) {
-			individual.addProperty(getOntProperty(), value);
+		public void addProperty(Individual individual, String value) {
+			individual.addProperty((Property)getResource(), value);
+		}
+	}
+	
+	public enum HOObjectProperty implements HOProperty {
+		
+		HASBOOK("hadith.ontology.property.hasBook"),
+		HASCHAPTER("hadith.ontology.property.hasChapter"),
+		HASSECTION("hadith.ontology.property.hasSection");
+		
+		private final String text;
+		
+		private HOObjectProperty(final String text) {
+	        this.text = text;
+	    }
+		
+		public String getText(){
+			return text;
+		}
+		
+		public String getURI() {
+			return String.format(mNS, mProps.getProperty(getText()));
+		}
+		
+		public Resource getResource() {
+			return mOntModel.getProperty(getURI());
+		}
+		
+		public void addProperty(Individual individual, String value) {
+			String objURI = String.format(mNS, value);
+			individual.addProperty((Property)getResource(), mOntModel.createResource(objURI));
 		}
 	}
 

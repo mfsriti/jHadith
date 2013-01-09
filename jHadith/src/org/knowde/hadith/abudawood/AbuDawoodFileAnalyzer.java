@@ -51,7 +51,7 @@ public class AbuDawoodFileAnalyzer extends FileAnalyzer {
 	}
 
 	public Component extractBook() {
-		String bookTitle = "AbuDaw";
+		String bookTitle = "Sunnan Abu Dawood";
 		return factory.getComponent(ComponentType.BOOK, null, bookTitle, 0);
 	}
 
