@@ -36,7 +36,13 @@ public class OntologyPropertiesHandler extends PropertiesHandler {
 	public static final String HO_CLASS_SEPARATOR = "hadith.ontology.class.separator";
 	public static final String HO_CLASS_TEXT = "hadith.ontology.class.text";
 */	
+	public String getTempDir() {
+		return getProperty(HO_TMPDUMP_DIR); 
+	}
+	
 	public static final String HO_PROPERTY_TITLE = "hadith.ontology.property.title";
 	
 	public static final String HO_PROPERTIES_FILE = "src\\org\\knowde\\hadith\\owl\\hadith-ontology.properties";
+	
+	public static final String HO_TMPDUMP_DIR = "hadith.ontology.tmpdir";
 }

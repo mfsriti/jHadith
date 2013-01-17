@@ -28,7 +28,7 @@ public class OWLSerializerTest {
 		    SerializeComponentsVisitor serializer = new SerializeComponentsVisitor(list);
 		    serializer.execute();
 		    
-		    ho.dump();
+		    ho.writeToFile("");
 
 	}
 

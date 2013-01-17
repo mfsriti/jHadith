@@ -57,12 +57,6 @@ public abstract class Ontology {
 			System.out.println("hadith.ontology.property.="+it2.next().getLocalName());
 	}
 */		
-/*
-	public void addBook(String id, String bookName) {
-		Individual individual =  HOClass.BOOK.addIndividual(id);
-		HODataProperty.TITLE.addDataProperty(individual, bookName);
-	}
-*/
 
 	public void addIndividual(HOClass typeName, String id, Map<HOProperty,String> dataProperties){
 		Individual individual = typeName.addIndividual(id);
@@ -73,6 +67,12 @@ public abstract class Ontology {
 	
 	public void dump(){
 		mOntModel.write(System.out, "RDF/XML");
+	}
+	
+	public void writeToFile(String fileName) throws GeneralException{
+		if (fileName==null || fileName.isEmpty())
+			fileName = mProps.getTempDir() + mNS.substring(mNS.lastIndexOf("/"), mNS.indexOf("#"));
+		(new OntologyFileHandler(mOntModel, fileName)).dump();
 	}
 
 	public interface HOResource {
@@ -128,7 +128,9 @@ public abstract class Ontology {
 
 		TITLE ("hadith.ontology.property.title"),
 		ORDERNUM ("hadith.ontology.property.ordernum"),
-		HASBOOK("hadith.ontology.property.hasBook");
+		CHAINTEXT("hadith.ontology.property.chainText"),
+		TERM("hadith.ontology.property.term"),
+		MATNTEXT("hadith.ontology.property.matnText");
 		
 		private final String text;
 		
@@ -157,7 +159,9 @@ public abstract class Ontology {
 		
 		HASBOOK("hadith.ontology.property.hasBook"),
 		HASCHAPTER("hadith.ontology.property.hasChapter"),
-		HASSECTION("hadith.ontology.property.hasSection");
+		HASSECTION("hadith.ontology.property.hasSection"),
+		HASHADITH("hadith.ontology.property.hasHadith"),
+		HASCHAIN("hadith.ontology.property.hasChain");
 		
 		private final String text;
 		

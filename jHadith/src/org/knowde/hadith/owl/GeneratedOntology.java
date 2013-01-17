@@ -50,10 +50,4 @@ public class GeneratedOntology extends Ontology {
 		return mOntModel.getOntClass(name);
 	}
 	
-	public void writeToFile(String fileName) throws GeneralException{
-		if (fileName==null)
-			fileName = mProps.getTmpDir() + mOntology.getLocalName() + ".owl";
-		(new OntologyFileHandler(mOntModel, fileName)).dump();
-	}
-	
 }

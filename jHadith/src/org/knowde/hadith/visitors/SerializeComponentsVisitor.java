@@ -37,7 +37,6 @@ public class SerializeComponentsVisitor extends Visitor {
 
 	@Override
 	public void visit(Book b) {
-		//Ontology.getInstance().addBook(b.getId(), b.getValue());
 		Map<HOProperty,String> props = new HashMap<HOProperty, String>();
 		props.put(HODataProperty.TITLE, b.getValue());
 		currentOnt.addIndividual(HOClass.NARRATIONBOOK, b.getId(), props);
@@ -53,9 +52,11 @@ public class SerializeComponentsVisitor extends Visitor {
 	}
 
 	@Override
-	public void visit(Chain chain) {
-		// TODO Auto-generated method stub
-		
+	public void visit(Chain c) {
+		Map<HOProperty,String> props = new HashMap<HOProperty, String>();
+		props.put(HODataProperty.CHAINTEXT, c.getValue());
+		props.put(HOObjectProperty.HASHADITH, c.getParent().getId());
+		currentOnt.addIndividual(HOClass.CHAIN, c.getId(), props);
 	}
 
 	@Override
@@ -63,14 +64,18 @@ public class SerializeComponentsVisitor extends Visitor {
 		Map<HOProperty,String> props = new HashMap<HOProperty, String>();
 		props.put(HODataProperty.ORDERNUM, String.valueOf(n.getNumber()));
 		props.put(HOObjectProperty.HASSECTION, n.getParent().getId());
-		//hasBook pour narration: le mieux il faut la laisser pour l inference
+		// TODO hasBook pour narration: le mieux il faut la laisser pour l inference
 		currentOnt.addIndividual(HOClass.NARRATION, n.getId(), props);
 	}
 
 	@Override
-	public void visit(Narrator narrator) {
-		// TODO Auto-generated method stub
-		
+	public void visit(Narrator n) {
+		Map<HOProperty,String> props = new HashMap<HOProperty, String>();
+		props.put(HODataProperty.TERM, n.getValue());
+		props.put(HODataProperty.ORDERNUM, String.valueOf(n.getNumber()));
+		props.put(HOObjectProperty.HASCHAIN, n.getParent().getId());
+		currentOnt.addIndividual(HOClass.NARRATOR, n.getId(), props);
+		// TODO find the original rawi and connect this one to him... perhaps this task will be performed in another place.
 	}
 
 	@Override
@@ -83,14 +88,21 @@ public class SerializeComponentsVisitor extends Visitor {
 	}
 
 	@Override
-	public void visit(Separator separator) {
-		// TODO Auto-generated method stub
+	public void visit(Separator s) {
+		Map<HOProperty,String> props = new HashMap<HOProperty, String>();
+		props.put(HODataProperty.TERM, s.getValue());
+		props.put(HODataProperty.ORDERNUM, String.valueOf(s.getNumber()));
+		props.put(HOObjectProperty.HASCHAIN, s.getParent().getId());
+		currentOnt.addIndividual(HOClass.SEPARATOR, s.getId(), props);
 		
 	}
 
 	@Override
-	public void visit(Text text) {
-		// TODO Auto-generated method stub
+	public void visit(Text t) {
+		Map<HOProperty,String> props = new HashMap<HOProperty, String>();
+		props.put(HODataProperty.MATNTEXT, t.getValue());
+		props.put(HOObjectProperty.HASHADITH, t.getParent().getId());
+		currentOnt.addIndividual(HOClass.TEXT, t.getId(), props);
 		
 	}
 

@@ -90,7 +90,7 @@ public class AbuDawoodFileAnalyzer extends FileAnalyzer {
 		// if (word.equals("]")) //this condition always true
 
 		Component chain = factory.getComponent(ComponentType.CHAIN, narration,
-				"", 0);
+				line, 0);
 		// @TODO: set chain orginal text at the end
 		int textBeginIndex = extractChainRings(words, chain);
 		
@@ -168,7 +168,6 @@ public class AbuDawoodFileAnalyzer extends FileAnalyzer {
 		/*try {
 			System.in.read();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
 		return factory.getComponent(ComponentType.TEXT, narration, text, 0);
